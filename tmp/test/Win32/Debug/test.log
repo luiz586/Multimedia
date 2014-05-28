@@ -1,0 +1,29 @@
+﻿Build started 2014-05-26 20:43:01.
+     1>Project "E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\projects\test.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Programy\Microsoft Visual Studio Pro 2012\VC\bin\CL.exe /c /I..\source\ /I..\source\lib_gen1 /I..\source\lib_gen2 /ZI /nologo /W3 /WX- /MP /Od /Oy- /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /arch:SSE2 /fp:strict /Zc:wchar_t /Zc:forScope /GR- /Fo"E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\\tmp\test\Win32\Debug\\" /Fd"E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\\tmp\test\Win32\Debug\vc110.pdb" /FR"E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\\tmp\test\Win32\Debug\\" /Gd /TP /analyze- /errorReport:prompt ..\source\Scaling.cpp
+         Scaling.cpp
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\lib_gen2\xcfg.h(24): warning C4018: '>' : signed/unsigned mismatch
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(22): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(23): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(60): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(61): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(70): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(71): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(72): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(94): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(95): warning C4244: 'initializing' : conversion from 'float' to 'int', possible loss of data
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(112): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(113): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+     1>e:\maly\studia\2 stopien i sem\systemy multimedialne\projekt\avlib_c\source\scaling.cpp(115): warning C4244: '=' : conversion from 'float' to 'int', possible loss of data
+       Link:
+         D:\Programy\Microsoft Visual Studio Pro 2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\Debug\test_Win32_Debug.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\bin lib_gen2_Win32_Debug.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\Debug\test_Win32_Debug.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\Debug\test_Win32_Debug.lib" /MACHINE:X86 "E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\\tmp\test\Win32\Debug\main.obj"
+         "E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\\tmp\test\Win32\Debug\Scaling.obj"
+         test.vcxproj -> E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\Debug\test_Win32_Debug.exe
+       BscMake:
+         D:\Programy\Microsoft Visual Studio Pro 2012\VC\bin\bscmake.exe /nologo /o"E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\Debug\test_Win32_Debug.bsc" /n "E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\\tmp\test\Win32\Debug\main.sbr" "E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\\tmp\test\Win32\Debug\Scaling.sbr"
+     1>Done Building Project "E:\Maly\Studia\2 stopien I sem\Systemy multimedialne\Projekt\AVlib_c\projects\test.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:09.99
