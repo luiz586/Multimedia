@@ -41,6 +41,7 @@ int wmain( int argc, wchar_t *argv[ ], wchar_t *envp[ ])
 		if(newWidth > 0 && newHeight > 0){
 			Scaling* scaling = new Scaling(newWidth, newHeight);
 			scaling->scaleImage(scalingType);
+			delete scaling;
 		}
 		else{
 			cout<<"Wysokoœæ i szerokoœæ musz¹ byæ dodatnie"<<endl;
@@ -52,9 +53,8 @@ int wmain( int argc, wchar_t *argv[ ], wchar_t *envp[ ])
 	} while (continueChar == 'a');
 
 
-
-  system("pause");
-  return EXIT_SUCCESS;
+	system("pause");
+	return EXIT_SUCCESS;
 }
 
 

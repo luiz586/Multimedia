@@ -8,6 +8,7 @@
 #include <fstream>
 #include <sstream>
 #include <math.h> 
+using namespace AVlib;
 
 
 class Scaling{
@@ -19,6 +20,8 @@ public:
 	int inputImageYSize;
 	float ratioX;
 	float ratioY;
+	xImg* mInputImage;
+	xImg* mOutputImage;
 	
 	static enum scalingTypes{
 		simple = 0,
@@ -32,9 +35,13 @@ public:
 	Scaling(int newWidth, int newHeight);
 	void scaleImage(int scalingType);
 	int simpleScaling(int16** inputPel);
-	int Scaling::bilinearScaling(float samplingPointX, float samplingPointY, int16** inputPel);
-	int Scaling::bicubicInterpolation();
+	int bilinearScaling(float samplingPointX, float samplingPointY, int16** inputPel);
+	int bicubicScaling(float samplingPointX, float samplingPointY, int16** inputPel);
+	int cubicInterpolate (int16 samples[4], float dx);
 	int16** scaleUsingType(int scaleType, int16** inputPel);
 	FILE_HANDLE setOutputUri(int scalingType);
+	int secondCubic(float samplingPointX, float samplingPointY, int16** inputPel);
+	float rFunction(float x);
+	float pFunction(float x);
 
 };
