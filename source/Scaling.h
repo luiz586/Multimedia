@@ -37,6 +37,10 @@ public:
 	int simpleScaling(int16** inputPel);
 	int bilinearScaling(float samplingPointX, float samplingPointY, int16** inputPel);
 	int bicubicScaling(float samplingPointX, float samplingPointY, int16** inputPel);
+	int lanczosScaling(float samplingPointX, float samplingPointY, int16** inputPel);
+	int lanczos3_filter(int t);
+	int clean(int t);
+	double sinc(double x);
 	int cubicInterpolate (int16 samples[4], float dx);
 	int16** scaleUsingType(int scaleType, int16** inputPel);
 	FILE_HANDLE setOutputUri(int scalingType);

@@ -2,6 +2,9 @@
 using namespace AVlib;
 using namespace std;
 
+#define M_PI 3.14159265358979323846
+#define M_LANCZOS_FILTER_SIZE 3
+
 Scaling::Scaling(int newWidth, int newHeight){
 	this->newWidth = newWidth;
 	this->newHeight = newHeight;
@@ -84,7 +87,15 @@ int16** Scaling::scaleUsingType(int scaleType, int16** inputPel){
 			}
 		}
 		break;
-	case scalingTypes(lanczos):
+	case scalingTypes(lanczos): 
+		for(int j=0; j<newHeight; j++){
+			outputPel[j] = new int16[newWidth];
+			for(int k=0; k<newWidth; k++){
+				samplingPointX = k*ratioX;
+				samplingPointY = j*ratioY;					
+				outputPel[j][k] = lanczosScaling(samplingPointX, samplingPointY, inputPel);
+			}
+		}
 		break;
 	default:
 		break;
@@ -94,6 +105,47 @@ int16** Scaling::scaleUsingType(int scaleType, int16** inputPel){
 	return outputPel;
 }
 
+int Scaling::lanczos3_filter(int t)
+{
+   if (t < 0.0f)
+      t = -t;
+
+   if (t < 3.0f)
+      return clean(sinc(t) * sinc(t / 3.0f));
+   else
+      return (0.0f);
+}
+
+
+int Scaling::clean(int t)
+{
+   const int EPSILON = .0000125f;
+   if (abs(t) < EPSILON)
+      return 0.0f;
+   return (int)t;
+}
+
+double Scaling::sinc(double x)
+{
+   x = (x * M_PI);
+
+   if ((x < 0.01f) && (x > -0.01f))
+      return 1.0f + x*x*(-1.0f/6.0f + x*x*1.0f/120.0f);
+
+   return sin(x) / x;
+}
+
+int Scaling::lanczosScaling(float samplngPointX, float samplingPointY, int16** inputPel) {
+	int outputValue = 0;
+	for (int i = int(abs(samplngPointX) - M_LANCZOS_FILTER_SIZE + 1); 
+		i < int(abs(samplngPointX) + M_LANCZOS_FILTER_SIZE); i++) {
+			for (int j = int(abs(samplingPointY) - M_LANCZOS_FILTER_SIZE + 1); 
+				j < int(abs(samplingPointY) + M_LANCZOS_FILTER_SIZE); i++) {
+					outputValue += *(inputPel[(int)samplingPointY] + (int)samplngPointX) * lanczos3_filter(samplngPointX - i) * lanczos3_filter(samplingPointY - j);
+			}
+	}
+	return outputValue;
+}
 
 int Scaling::bicubicScaling(float samplingPointX, float samplingPointY, int16** inputPel){	
 	float flooredX;
