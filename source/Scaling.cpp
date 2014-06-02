@@ -135,15 +135,22 @@ double Scaling::sinc(double x)
    return sin(x) / x;
 }
 
-int Scaling::lanczosScaling(float samplngPointX, float samplingPointY, int16** inputPel) {
+int Scaling::lanczosScaling(float samplingPointX, float samplingPointY, int16** inputPel) {
 	int outputValue = 0;
-	for (int i = int(abs(samplngPointX) - M_LANCZOS_FILTER_SIZE + 1); 
-		i < int(abs(samplngPointX) + M_LANCZOS_FILTER_SIZE); i++) {
-			for (int j = int(abs(samplingPointY) - M_LANCZOS_FILTER_SIZE + 1); 
-				j < int(abs(samplingPointY) + M_LANCZOS_FILTER_SIZE); i++) {
-					outputValue += *(inputPel[(int)samplingPointY] + (int)samplngPointX) * lanczos3_filter(samplngPointX - i) * lanczos3_filter(samplingPointY - j);
+
+	for (int i = int(abs(samplingPointY) - M_LANCZOS_FILTER_SIZE + 1); 
+		i < int(abs(samplingPointY) + M_LANCZOS_FILTER_SIZE); i++)  {
+			for (int j = int(abs(samplingPointX) - M_LANCZOS_FILTER_SIZE + 1); 
+				j < int(abs(samplingPointX) + M_LANCZOS_FILTER_SIZE); i++) {
+					if(j == inputImageXSize || i == inputImageYSize || j < 0 || i < 0){
+						return inputPel[(int)samplingPointY][(int)samplingPointX];
+					}
+					//outputValue += *(inputPel[(int)samplingPointY] + (int)samplngPointX) * lanczos3_filter(samplngPointX - i) * lanczos3_filter(samplingPointY - j);
+					outputValue += inputPel[i][j] * lanczos3_filter(samplingPointY - i) * lanczos3_filter(samplingPointX - j);
 			}
+
 	}
+
 	return outputValue;
 }
 

@@ -31,11 +31,11 @@ int wmain( int argc, wchar_t *argv[ ], wchar_t *envp[ ])
 	char continueChar;
 
 	do{
-		cout<<"Podaj now¹ szerokoœæ obrazu"<<endl;
+		cout<<"Podaj nowa szerokosc obrazu"<<endl;
 		cin>>newWidth;
-		cout<<"Podaj now¹ wysokoœæ obrazu"<<endl;
+		cout<<"Podaj nowa wysokosc obrazu"<<endl;
 		cin>>newHeight;
-		cout<<"Wybierz rodzaj interpolacji:"<<endl<<"0 - szybka, 1 - dwuliniowa, 2 - dwuszeœcienna, 3 lanczosa"<<endl;
+		cout<<"Wybierz rodzaj interpolacji:"<<endl<<"0 - szybka, 1 - dwuliniowa, 2 - dwuszescienna, 3 lanczosa"<<endl;
 		cin>>scalingType;
 
 		if(newWidth > 0 && newHeight > 0){
@@ -44,10 +44,10 @@ int wmain( int argc, wchar_t *argv[ ], wchar_t *envp[ ])
 			delete scaling;
 		}
 		else{
-			cout<<"Wysokoœæ i szerokoœæ musz¹ byæ dodatnie"<<endl;
+			cout<<"Wysokosc i szerokosc musz¹ byæ dodatnie"<<endl;
 		}
 
-		cout<<"Aby kontynowaæ skalowanie wciœnij 'a'"<<endl;
+		cout<<"Aby kontynowac skalowanie wciœnij 'a'"<<endl;
 		cin>>continueChar;
 
 	} while (continueChar == 'a');
