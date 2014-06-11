@@ -183,12 +183,12 @@ int Scaling::bicubicScaling(float samplingPointX, float samplingPointY, int16** 
 	}
 
 	int16 rows[4];
-	rows[0] = cubicInterpolate(columns[0], dx);
-	rows[1] = cubicInterpolate(columns[1], dx);
-	rows[2] = cubicInterpolate(columns[2], dx);
-	rows[3] = cubicInterpolate(columns[3], dx);
+	rows[0] = cubicInterpolate(columns[0], 1.5);
+	rows[1] = cubicInterpolate(columns[1], 1.5);
+	rows[2] = cubicInterpolate(columns[2], 1.5);
+	rows[3] = cubicInterpolate(columns[3], 1.5);
 
-	return cubicInterpolate(rows, dy);
+	return cubicInterpolate(rows, 1.5);
 }
 
 int Scaling::cubicInterpolate(int16 cols[4], float dx) {

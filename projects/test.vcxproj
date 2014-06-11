@@ -25,6 +25,9 @@
   <ItemGroup>
     <ClInclude Include="..\source\Scaling.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\lena.bmp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath11)</VCTargetsPath>
   </PropertyGroup>
